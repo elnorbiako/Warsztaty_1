@@ -19,7 +19,7 @@ public class Main2 {
  * Lottery: 6 numbers from 1 to 49, sorted 
  * @return int[] with 6 numbers 
  */
-	static Integer[] lotto6() {
+	static int[] lotto6() {
 		
 		Integer[] arr = new Integer[49];
 		for (int i = 0; i < arr.length; i++) {
@@ -29,11 +29,11 @@ public class Main2 {
 		Collections.shuffle(Arrays.asList(arr));
 //		System.out.println(Arrays.toString(arr));
 		
-		Integer[] lottoSixNumbers = new Integer[6];
+		int[] lottoSixNumbers = new int[6];
 			for (int i=0; i<lottoSixNumbers.length; i++) {
 				lottoSixNumbers[i] = arr[i];
 			}
-//		System.out.println(Arrays.toString(lottoSixNumbers));
+		System.out.println(Arrays.toString(lottoSixNumbers));
 		return lottoSixNumbers;
 	} 
 	
@@ -41,9 +41,9 @@ public class Main2 {
 	 * User input for lotto - 6 numbers from 1 to 49, unique, lettersproof
 	 * @return sorted 6 user numbers 
 	 */
-	static Integer[] user6() {
+	static int[] user6() {
 		
-		Integer[] userNumbers = new Integer[6];
+		int[] userNumbers = new int[6];
 		
 		Scanner scan = new Scanner(System.in);
 		int n =0;
@@ -80,18 +80,25 @@ public class Main2 {
 			}
 		}
 		Arrays.sort(userNumbers);
+//		int[] lottoConfirm =lotto6();
+//		System.out.println("Lotto numbers: " + Arrays.toString(lottoConfirm));
 		System.out.println("Your numbers: " + Arrays.toString(userNumbers));
 		return userNumbers;
 	}
-	
+	/**
+	 * Matches two 6 int Arrays, checks how many times one value matches other  
+	 * @return number of hits
+	 */
 	static int lottoMatcher() {
 		
 		
-		Integer[] userNo = user6();
-		Integer[] lottoNo = lotto6();
+		int[] userNo = user6();
+		int[] lottoNo = lotto6();
 		int counter=0;
 		for (int i=0; i<userNo.length; i++) {
+			int n1 = userNo[i];
 			for (int j=0; j<lottoNo.length; j++) {
+				int n2 = lottoNo[j];
 				if (userNo[i] == lottoNo[j]) {
 					counter++;
 				}				
@@ -100,7 +107,9 @@ public class Main2 {
 		System.out.println(counter + " hits");
 		return counter;
 	}
-	
+	/**
+	 * Depending on counter hits, gives a result 
+	 */
 	static void lottoResult() {
 		
 		int result = lottoMatcher();
