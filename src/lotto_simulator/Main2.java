@@ -1,4 +1,4 @@
-package ex2_lotto;
+package lotto_simulator;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -33,7 +33,7 @@ public class Main2 {
 			for (int i=0; i<lottoSixNumbers.length; i++) {
 				lottoSixNumbers[i] = arr[i];
 			}
-		System.out.println(Arrays.toString(lottoSixNumbers));
+		System.out.println("Lotto numbers: " + Arrays.toString(lottoSixNumbers));
 		return lottoSixNumbers;
 	} 
 	
@@ -74,14 +74,11 @@ public class Main2 {
 				}catch (NumberFormatException e) {
 	    				
 		            System.out.println("This is not a number!");
-//				           
 				}
 			
 			}
 		}
 		Arrays.sort(userNumbers);
-//		int[] lottoConfirm =lotto6();
-//		System.out.println("Lotto numbers: " + Arrays.toString(lottoConfirm));
 		System.out.println("Your numbers: " + Arrays.toString(userNumbers));
 		return userNumbers;
 	}

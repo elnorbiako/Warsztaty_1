@@ -1,4 +1,4 @@
-package ex1_guess_number;
+package guess_number_game;
 
 import java.util.InputMismatchException;
 import java.util.Random;
