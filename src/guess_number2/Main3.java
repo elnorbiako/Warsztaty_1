@@ -2,11 +2,21 @@ package guess_number2;
 
 import java.util.Scanner; 
 
-public class Main3
-{
-	//Guess number game - user thinks a number from 0-1000, cpu guesses in 10 max attempts to guess
-	public static void main(String[] args) throws InterruptedException 
-	{
+public class Main3 {
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		cpuGuess1000();
+	} 
+			
+			
+			
+		/**
+		 * Guess number game - user thinks a number from 0-1000, cpu guesses in 10 max attempts to guess
+		 * @throws InterruptedException
+		 */
+		static void cpuGuess1000()	throws InterruptedException  {
 		
 		Scanner scan = new Scanner(System.in);
 
@@ -21,8 +31,7 @@ public class Main3
 		//Cpu goes into users mind... 
 		Thread.sleep(1500);
 		
-		while(!solved)
-		{
+		while(!solved)	{
 			
 			//according to binary search, max attempts is 10. If after 10 he dont confirm correct guess receives 'play fair'  
 			if (numberOfGuesses == 10)   
@@ -53,7 +62,7 @@ public class Main3
 				else if (input.equals("bullseye"))
 				{					
 					System.out.println("Your number: " + guess);
-					System.out.println("Algorithm took " + numberOfGuesses + " to guess Your number. Clever, huh?");
+					System.out.println("Algorithm took " + numberOfGuesses + "times to guess Your number. Clever, huh?");
 					solved=true;
 				}
 				//in case of other inputs 
